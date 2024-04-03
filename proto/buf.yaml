@@ -1,0 +1,4 @@
+version: v1
+name: buf.build/sai-bhargav/grpc-https-gateway
+deps:
+  - buf.build/googleapis/googleapis

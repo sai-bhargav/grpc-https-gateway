@@ -1,11 +1,15 @@
 version: v1
 plugins:
   - plugin: go
-    out: gen/go
+    out: proto/client
     opt:
       - paths=source_relative
   - plugin: go-grpc
-    out: gen/go
+    out: proto/client
     opt:
       - paths=source_relative
-
+  - plugin: grpc-gateway
+    out: proto/client
+    opt:
+      - paths=source_relative
+      - generate_unbound_methods=true

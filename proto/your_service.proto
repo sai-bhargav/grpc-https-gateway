@@ -1,0 +1,18 @@
+ syntax = "proto3";
+ package clientService;
+ option go_package = "github.com/sai-bhargav/grpc-https-gateway/proto/client";
+
+ import "google/api/annotations.proto";
+
+ message StringMessage {
+   string Value = 1;
+ }
+
+ service ClientService {
+  rpc AddUser(StringMessage) returns (StringMessage) {
+    option (google.api.http) = {
+            get:"/v1/users"
+         };
+  }
+  rpc CreateMenu(StringMessage) returns (StringMessage) {}
+ }
